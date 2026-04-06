@@ -19,19 +19,24 @@ int DateTime::daysInMonth(int y, int m) const
 
 int DateTime::DateEaster() {
 	int globalDate = 0;
-	for (int i = 0; i < year; i++) {
+	for (int i = 1; i < year; i++)
+	{
 		if (isLeapYear(i)) {
 			globalDate += 366;
 		}
 		else {
-			globalDate += 355;
+			globalDate += 365;
 		}
 	}
+
 
 	for (int i = 1; i < month; i++) {
 		globalDate += daysInMonth(year, i);
 	}
 
+	globalDate += day;
+
 	return globalDate;
 }
 
+;
