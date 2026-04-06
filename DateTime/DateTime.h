@@ -2,8 +2,9 @@
 #include <iostream>
 
 class DateTime {
-	int yers, month, day;
+	int year, month, day;
 
 	bool isLeapYear(int y) const;
 	int daysInMonth(int y, int m) const;
+	int DateEaster();
 };

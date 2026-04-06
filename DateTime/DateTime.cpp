@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include "DateTime.h"
+using namespace std;
 
+DateTime::DateTime() : year(1997), month(12), day(6) {}
 
 bool DateTime::isLeapYear(int y) const
 {
@@ -13,5 +15,9 @@ int DateTime::daysInMonth(int y, int m) const
 	if (m == 2 && isLeapYear(y))
 		return 29;
 	return days[m - 1];
+}
+
+int DateTime::DateEaster() {
+
 }
 
