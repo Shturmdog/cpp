@@ -4,9 +4,9 @@ using namespace std;
 
 int main() {
 	DateTime data;
-
-	//cout << data.DateEaster();
 	data.input();
 	data.basicFormat();
+	data.shortformat();
+	cout << data.DateEaster();
 }
 
