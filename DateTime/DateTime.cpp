@@ -53,11 +53,12 @@ bool DateTime::checkDate() {
 }
 
 void DateTime::input() {
-	cin >> day >> month >> year;
+	char dot1, dot2;
+	cout << "data: ";
+	cin >> day >> dot1 >> month >> dot2 >> year;
 	if (!checkDate()) {
 		cout << "Error: incorrect date" << endl;
 	}
-}
 
 void DateTime::basicFormat() {
 	cout << day << '.';
@@ -75,7 +76,7 @@ void DateTime::shortformat() {
 
 void DateTime::textformat() {
 	const char* months[] = { "январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" };
-	cout << day << months[month - 1] << year;
+	cout << day << ' ' << months[month - 1] << ' ' << year << endl;
 }
 
 void DateTime::RoundZero(int n) {
