@@ -43,11 +43,11 @@ int DateTime::DateEaster() {
 
 bool DateTime::checkDate() {
 	if (year < 1 || year > 3000)
-		return false;
+		throw DataTimeException();
 	if (month < 1 || month > 12)
-		return false;
+		throw DataTimeException();
 	if (day < 1 || day > daysInMonth(year, month))
-		return false;
+		throw DataTimeException();
 
 	return true;
 }
@@ -56,9 +56,14 @@ void DateTime::input() {
 	char dot1, dot2;
 	cout << "data: ";
 	cin >> day >> dot1 >> month >> dot2 >> year;
-	if (!checkDate()) {
-		cout << "Error: incorrect date" << endl;
+	try {
+		checkDate();
+		cout << "Data correct!" << endl;
 	}
+	catch (const DataTimeException&) {
+		cout << "Data incorect";
+	}
+}
 
 void DateTime::basicFormat() {
 	cout << day << '.';
