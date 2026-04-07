@@ -11,6 +11,7 @@ public:
 	int DateEaster();
 	void input();
 	void basicFormat();
+	void textformat();
 	bool checkDate();
 	void RoundZero(int n);
 

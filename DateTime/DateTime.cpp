@@ -73,6 +73,10 @@ void DateTime::shortformat() {
 
 }
 
+void DateTime::textformat() {
+
+}
+
 void DateTime::RoundZero(int n) {
 	if (n < 10)
 		cout << '0';
