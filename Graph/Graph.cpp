@@ -73,3 +73,18 @@ bool BFS::connected(Node* begin, Node* end)
 	}
 	return false;
 }
+
+bool DFS::connectedRecursive(Node* begin, Node* end)
+{
+	if (begin == end)
+		return true;
+
+	visited.insert(begin);
+
+	for (Node::node_iterator it = begin->nb_begin(); it != begin->nb_end(); it++)
+		if (visited.find(*it) == visited.end())
+			if (connectedRecursive(*it, end))
+				return true;
+
+	return false;
+}

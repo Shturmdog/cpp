@@ -46,3 +46,15 @@ public:
 	BFS(const Graph& agraph) : graph(agraph) {}
 	bool connected(Node* begin, Node* end);
 };
+
+class DFS
+{
+private:
+	const Graph& graph;
+	set<Node*> visited;
+	bool connectedRecursive(Node* begin, Node* end);
+
+public:
+	DFS(const Graph& agraph) : graph(agraph) {}
+	bool connected(Node* begin, Node* end);
+};
