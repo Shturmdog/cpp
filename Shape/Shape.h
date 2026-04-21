@@ -4,7 +4,31 @@
 #include <vector>
 using namespace std;
 
+const double PI = M_PI;
 
+template<typename T>
+class Point {
+public:
+	T x, y;
+	Point(T x = 0, T y = 0) {
+		this->x = x;
+		this->y = y;
+	}
+
+	Point operator + (const Point& other) const {
+		return Point(x + other.x, y + other.y);
+	}
+
+	Point operator - (const Point& other) const {
+		return Point(x - other.x, y - other.y);
+	}
+
+	double distance(const Point& other) const {
+		double dx = static_cast<double>(x - other.x);
+		double dy = static_cast<double>(y - other.y);
+		return sqrt(dx * dx + dy * dy);
+	}
+};
 
 class Figure {
 public:
