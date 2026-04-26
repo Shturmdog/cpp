@@ -98,4 +98,12 @@ class Triangle : public Figure {
 		sideA = b.distance(c);
 		sideB = a.distance(c);
 		sideC = a.distance(b);
+
+public:
+	Triangle(const Point<double>&p1, const Point<double>&p2, const Point<double>&p3) {
+		a = p1;
+		b = p2;
+		c = p3;
+		calc_side();
+	}
 };
