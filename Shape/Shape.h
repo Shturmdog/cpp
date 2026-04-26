@@ -124,4 +124,11 @@ public:
 	double calc_perimeter() const {
 		return sideA + sideB + sideC;
 	}
+
+	bool isValid() const {
+		return (sideA + sideB > sideC) &&
+			(sideA + sideC > sideB) &&
+			(sideB + sideC > sideA) &&
+			(sideA > 0 && sideB > 0 && sideC > 0);
+	}
 };
