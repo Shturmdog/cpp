@@ -173,6 +173,19 @@ public:
 				vertex.push_back(Point<double>(vx[i].x, vx[i].y));
 			}
 		}
+
+		double calc_area() {
+			if (vertexCount < 3) return 0;
+
+			double area = 0;
+			for (int i = 0; i < vertexCount; i++) {
+				int j = (i + 1) % vertexCount;
+				area += vertex[i].x * vertex[j].y;
+				area -= vertex[j].x * vertex[i].y;
+			}
+
+			return abs(area) / 2;
+		}
 	}
 
 
