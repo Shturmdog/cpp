@@ -159,6 +159,20 @@ public:
 				vertex.push_back(vx[i]);
 			}
 		}
+
+		Polygon(const Point<int> vx[], int count) {
+			vertexCount = count;
+			for (int i = 0; i < count; i++) {
+				vertex.push_back(Point<double>(vx[i].x, vx[i].y));
+			}
+		}
+
+		Polygon(const Point<float> vx[], int count) {
+			vertexCount = count;
+			for (int i = 0; i < count; i++) {
+				vertex.push_back(Point<double>(vx[i].x, vx[i].y));
+			}
+		}
 	}
 
 
