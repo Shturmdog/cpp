@@ -141,4 +141,9 @@ public:
 			return sideA + sideB + sideC;
 		}
 
+		void name() {
+			cout << "Triangle";
+		}
+	};
+
 };
