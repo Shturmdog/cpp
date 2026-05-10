@@ -15,3 +15,40 @@ void Field::clear(bool isRedFirst) {
 		}
 	}
 }
+
+bool Field::makeTurn(int column) {
+	if (winner != EMPTY || column < 1 || column > FIELD_WIDTH)
+		return false;
+
+	int i = column - 1;
+	for (int j = 0; i < FIELD_HEIGHT; j++)
+		if (cells[i][j] == EMPTY) {
+			cells[i][j] = isRedTurn ? RED : YELLOW;
+			checkWinner();
+			isRedTurn = !isRedTurn;
+			return true;
+		}
+	return false;
+}
+
+void Field::checkWinner() {
+	for (int i = 0; i < FIELD_WIDTH; i++)
+		for (int j = 0; j < FIELD_HEIGHT; j++) {
+			Cell start = cells[i][j];
+			if (start == EMPTY) continue;
+			for (int dir = 0; dir < DIR_NUMBER; dir++) {
+				int lenght = 0, iline = i, jline = j;
+				while (++lenght < WIN_LENGTH) {
+					iline += di[dir];
+					jline += dj[dir];
+					if (iline < 0 || iline >= FIELD_WIDTH || jline < 0 || jline >= FIELD_HEIGHT)
+						break;
+					if (cells[iline][jline] != start) break;
+				}
+				if (lenght == WIN_LENGTH) {
+					winner = start;
+					return;
+				}
+			}
+		}
+}
