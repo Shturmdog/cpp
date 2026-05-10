@@ -74,9 +74,10 @@ bool Field::isRedTurnNow() const {
 void Field::print() const {
 	for (int i = FIELD_WIDTH - 1; i >= 0; i--) {
 		for (int j = 0; j < FIELD_HEIGHT; j++) {
-			if (cells[i][j] == RED) cout << "R|";
-			else if (cells[i][j] == YELLOW) cout << "Y|";
-			else cout << "_";
+			if (cells[j][i] == RED) cout << "R|";
+			else if (cells[j][i] == YELLOW) cout << "Y|";
+			else cout << "_|";
 		}
+		cout << "\n";
 	}
 }
