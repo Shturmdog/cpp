@@ -88,3 +88,13 @@ bool Field::isWon(bool red) const {
 	else
 		return YELLOW;
 }
+
+void Field::printResult() const {
+	print();
+	if (winner == RED)
+		cout << "Red Win!\n";
+	else if (winner == YELLOW)
+		cout << "Yellow Win!\n";
+	else
+		cout << "Draw!\n";
+}
