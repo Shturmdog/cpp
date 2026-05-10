@@ -81,3 +81,10 @@ void Field::print() const {
 		cout << "\n";
 	}
 }
+
+bool Field::isWon(bool red) const {
+	if (red)
+		return RED;
+	else
+		return YELLOW;
+}
