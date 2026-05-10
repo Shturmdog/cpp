@@ -2,6 +2,12 @@
 #include <iostream>
 using namespace std;
 
+enum Cell {
+	EMPTY = 0,
+	RED = 1,
+	YELLOW = 2
+};
+
 class Field {
 public:
 	Field(bool isRedFirst);
