@@ -52,3 +52,21 @@ void Field::checkWinner() {
 			}
 		}
 }
+
+bool Field::isOver() const {
+	if (winner != EMPTY)
+		return true;
+	for (int i = 0; i < FIELD_WIDTH; i++)
+		for (int j = 0; j < FIELD_HEIGHT; j++)
+			if (cells[i][j] == EMPTY)
+				return false;
+	return true;
+}
+
+Cell Field::getCell(int i, int j) const {
+	return cells[i][j];
+}
+
+bool Field::isRedTurnNow() const {
+	return isRedTurn;
+}
